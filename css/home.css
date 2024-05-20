@@ -1,0 +1,127 @@
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables de couleur */
+:root {
+    --primary-color: #DE5D83; /* Rose */
+    --secondary-color: #101116; /* Noir */
+    --text-color: #FFFFFF; /* Blanc */
+}
+
+/* Style général */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0B1118; /* Fond foncé */
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 100px; /* Taille du logo */
+    height: auto;
+    margin-right: 10px; /* Espacement entre le logo et le titre */
+    border-radius: 8px; /* Coins arrondis */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation de transformation et d'ombre */
+    
+}
+
+.logo img:hover {
+    transform: scale(1.1); /* Zoom légèrement le logo au survol */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Augmente l'ombre portée au survol */
+}
+
+.logo h1 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0; /* Pour éviter tout espacement autour du titre */
+    border: no;
+}
+
+.movie {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.movie h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.movie p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.options a {
+    padding: 15px 30px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.options a:hover {
+    background-color: #FF5177;
+}
+
+.footer {
+    margin-top: 50px;
+    padding: 20px 0;
+    background-color: var(--secondary-color);
+    text-align: center;
+}
+
+.footer h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.footer-social i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.footer-social i:hover {
+    color: #FF5177;
+}

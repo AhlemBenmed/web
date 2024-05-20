@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Movie&#x1F3AC; </title>
+    <link rel="stylesheet" href="..\css\style1.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+<body>
+    <div id="container">
+        <form id="loginForm" action="../php/login.php" method="POST">
+            <h1>Login</h1>
+            <label><b>User name</b></label>
+            <input type="text" placeholder="Enter username" name="username" required>
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Enter your password" name="password" required>
+            <button type="submit">LOGIN</button>
+            <button type="button" id="SignUp"><a href="signup.html">SIGN UP</a></button>
+        </form>
+        <p><a href="welcome.html">Back to the Welcome page</a></p>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var form = document.getElementById('loginForm');
+            form.addEventListener('submit', function(event) {
+                var container = document.getElementById('container');
+                container.style.position = 'fixed';
+                container.style.top = '50%';
+                container.style.left = '50%';
+                container.style.transform = 'translate(-50%, -50%)';
+                event.preventDefault();
+                var formData = new FormData(form);
+                fetch(form.getAttribute('action'), {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(result => {
+                    if (result === 'success') {{window.location.href = "../html/index.php";};
+                    }else if (result === 'wrong_password') {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Password is incorrect!'
+                        });
+                    } else if (result === 'wrong_username') {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Username is incorrect!'
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Unknown error occurred!'
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'An unexpected error occurred. Please try again later!'
+                    });
+                });
+            });
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
+    <!-- Include SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- Include OwlCarousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- Include Swiper JS -->
+    <script src="../js/swiper-bundle.min.js"></script>
+    <!-- Include your custom JS -->
+    <script src="../js/main.js"></script>
+</body>
+</html>

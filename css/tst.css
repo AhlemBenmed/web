@@ -1,0 +1,46 @@
+body {
+    margin: 0; /* Supprime toutes les marges par défaut */
+    padding: 0; /* Supprime tous les rembourrages par défaut */
+    font-family: Arial, sans-serif;
+    background-color: #0B1118; /* Changer la couleur de l'arrière-plan */
+}
+
+.movies-list {
+    display: grid; /* Utiliser un affichage en grille */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Créer des colonnes dynamiques */
+    gap: 20px;
+    padding: 20px;
+    justify-items: center; /* Centrer les éléments dans la grille */
+}
+
+.movie-card {
+    position: relative;
+    width: 200px; /* Largeur fixe de la carte */
+    background-color: transparent; /* Fond de la carte transparent */
+    border: none; /* Supprimer la bordure */
+    overflow: hidden; /* Cacher tout contenu qui dépasse de la carte */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajouter une ombre légère */
+    transition: transform 0.3s ease; /* Ajouter une transition pour les animations */
+}
+
+.movie-image {
+    width: 100%;
+    height: auto; /* Ajuste automatiquement la hauteur pour maintenir les proportions */
+    object-fit: fill; /* Ajuster automatiquement la taille de l'image */
+}
+
+.movie-card-content {
+    padding: 10px;
+}
+
+.movie-card-title {
+    font-size: 1rem; /* Augmenter la taille du titre */
+    font-weight: bold; /* Ajouter un style gras au titre */
+    color: #fff; /* Changer la couleur du titre */
+}
+
+.movie-card-description {
+    font-size: 0.8rem; /* Reduire la taille de la description */
+    color: #bebebe; /* Changer la couleur de la description */
+    margin-top: 8px; /* Ajouter une marge en haut pour séparer le titre de la description */
+}
